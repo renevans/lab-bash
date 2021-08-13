@@ -1,0 +1,621 @@
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~
+$ cd lab-bash
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ echo "Hello World"
+Hello World
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ mkdir new_dir
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ rm -r new_dir
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ mkdir new_dir
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ rm -r new_dir
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git mv sed.txt lorem-copy
+fatal: bad source, source=sed.txt, destination=lorem-copy/sed.txt
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$
+
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git mv lorem-copy/sed.txt ^C
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git mv lorem/sed.txt lorem-copy
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ -c
+bash: -c: command not found
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ cd lorem
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem.txt
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem (master)
+$ cd ..
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git mv lorem/at.txt lorem-copy; lorem/lorem.txt lorem-copy
+lorem/lorem.txt: line 1: Lorem: command not found
+lorem/lorem.txt: line 2: Ut: command not found
+lorem/lorem.txt: line 3: Duis: command not found
+lorem/lorem.txt: line 4: Excepteur: command not found
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$  git mv lorem/at.txt lorem-copy; git mv lorem/lorem.txt lorem-copy
+fatal: bad source, source=lorem/at.txt, destination=lorem-copy/at.txt
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git mv lorem/at.txt lorem-copy
+fatal: bad source, source=lorem/at.txt, destination=lorem-copy/at.txt
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$  git mv lorem/lorem.txt lorem-copy
+fatal: bad source, source=lorem/lorem.txt, destination=lorem-copy/lorem.txt
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ cd lorem-copy
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem-copy (master)
+$ ls
+at.txt  dummy_file.txt  lorem.txt  sed.txt
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem-copy (master)
+$ cd ..
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ cd lore,
+bash: cd: lore,: No such file or directory
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ cd lorem
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem (master)
+$ git show release:sed.txt
+fatal: invalid object name 'release'.
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem (master)
+$ git show :sed.txt
+fatal: path 'sed.txt' does not exist (neither on disk nor in the index)
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem (master)
+$ ls
+at.txte
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem (master)
+$ cd ..
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ cd lorem-copy
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem-copy (master)
+$ git show :sed.txt
+fatal: path 'lorem-copy/sed.txt' is in the index, but not 'sed.txt'
+hint: Did you mean ':0:lorem-copy/sed.txt' aka ':0:./sed.txt'?
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem-copy (master)
+$ cd ..
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git show 0:lorem-copy/sed.txt
+fatal: invalid object name '0'.
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git show 0:lorem-copy/sed.txt
+fatal: invalid object name '0'.
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git show :0:lorem-copy/sed.txt
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?Homo homini lupus
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git show :0:lorem/sed.txt
+fatal: path 'lorem/sed.txt' does not exist (neither on disk nor in the index)
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git show :0:lorem/sed.txt
+fatal: path 'lorem/sed.txt' does not exist (neither on disk nor in the index)
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$  git show :0:lorem/sed.txt
+fatal: path 'lorem/sed.txt' does not exist (neither on disk nor in the index)
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$     ashdkfhlksdhf git show :0:lorem/sed.txt
+bash: ashdkfhlksdhf: command not found
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git show :0:lorem-copy/at.txt; git show :0:lorem-copy/lorem.txt
+At vero eos ET accusamus ET iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+deleniti atque corrupti quos dolores ET quas molestias excepturi sint occaecati cupiditate non
+provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum ET dolorum fuga.
+Et harum quidem rerum facilis est ET expedita distinctio.
+Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
+maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+Temporibus autem quibusdam ET aut officiis debitis aut rerum necessitatibus saepe eveniET
+ut ET voluptates repudiandae sint ET molestiae non recusandae.
+Itaque earum rerum hic tenETur a sapiente delectus, ut aut reiciendis voluptatibus maiores
+alias consequatur aut perferendis doloribus asperiores repellat
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ cat lorem-copy/sed.txt
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?Homo homini lupus
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ sed -n 1,3p lorem-copy/sed.txt
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ sed -n n-3,np lorem-copy/sed.txt
+sed: -e expression #1, char 2: extra characters after command
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ tail -n
+tail: option requires an argument -- n
+Try 'tail --help' for more information.
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ tail -n lorem-copy/sed.txt
+tail: invalid number of lines: ‘lorem-copy/sed.txt’
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ tail --help
+Usage: tail [OPTION]... [FILE]...
+Print the last 10 lines of each FILE to standard output.
+With more than one FILE, precede each with a header giving the file name.
+
+With no FILE, or when FILE is -, read standard input.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -c, --bytes=[+]NUM       output the last NUM bytes; or use -c +NUM to
+                             output starting with byte NUM of each file
+  -f, --follow[={name|descriptor}]
+                           output appended data as the file grows;
+                             an absent option argument means 'descriptor'
+  -F                       same as --follow=name --retry
+  -n, --lines=[+]NUM       output the last NUM lines, instead of the last 10;
+                             or use -n +NUM to output starting with line NUM
+      --max-unchanged-stats=N
+                           with --follow=name, reopen a FILE which has not
+                             changed size after N (default 5) iterations
+                             to see if it has been unlinked or renamed
+                             (this is the usual case of rotated log files);
+                             with inotify, this option is rarely useful
+      --pid=PID            with -f, terminate after process ID, PID dies
+  -q, --quiet, --silent    never output headers giving file names
+      --retry              keep trying to open a file if it is inaccessible
+  -s, --sleep-interval=N   with -f, sleep for approximately N seconds
+                             (default 1.0) between iterations;
+                             with inotify and --pid=P, check process P at
+                             least once every N seconds
+  -v, --verbose            always output headers giving file names
+  -z, --zero-terminated    line delimiter is NUL, not newline
+      --help     display this help and exit
+      --version  output version information and exit
+
+NUM may have a multiplier suffix:
+b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
+GB 1000*1000*1000, G 1024*1024*1024, and so on for T, P, E, Z, Y.
+Binary prefixes can be used, too: KiB=K, MiB=M, and so on.
+
+With --follow (-f), tail defaults to following the file descriptor, which
+means that even if a tail'ed file is renamed, tail will continue to track
+its end.  This default behavior is not desirable when you really want to
+track the actual name of the file, not the file descriptor (e.g., log
+rotation).  Use --follow=name in that case.  That causes tail to track the
+named file in a way that accommodates renaming, removal and creation.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/tail>
+or available locally via: info '(coreutils) tail invocation'
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ tail -n +3 lorem-copy/sed.txt
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?Homo homini lupus
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ echo "Homo homini lupus." >> lorem-copy/sed.txt
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ tail -n +3 lorem-copy/sed.txt
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?Homo homini lupus
+Homo homini lupus.
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ s/look for et/characters/ET \//
+bash: s/look: No such file or directory
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ sed -r -i.bak 's/et/ET/g' ~/lorem-copy/at.txt
+sed: can't read /c/Users/renev/lorem-copy/at.txt: No such file or directory
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ cd lorem-copy
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem-copy (master)
+$    sed -r -i.bak 's/et/ET/g' ~/lorem-copy/at.txt
+sed: can't read /c/Users/renev/lorem-copy/at.txt: No such file or directory
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem-copy (master)
+$ sed -r -i.bak 's/et/ET/g' ~/at.txt
+sed: can't read /c/Users/renev/at.txt: No such file or directory
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem-copy (master)
+$ cd ..
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ sed --
+Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]...
+
+  -n, --quiet, --silent
+                 suppress automatic printing of pattern space
+      --debug
+                 annotate program execution
+  -e script, --expression=script
+                 add the script to the commands to be executed
+  -f script-file, --file=script-file
+                 add the contents of script-file to the commands to be executed
+  --follow-symlinks
+                 follow symlinks when processing in place
+  -i[SUFFIX], --in-place[=SUFFIX]
+                 edit files in place (makes backup if SUFFIX supplied)
+  -b, --binary
+                 open files in binary mode (CR+LFs are not processed specially)
+  -l N, --line-length=N
+                 specify the desired line-wrap length for the `l' command
+  --posix
+                 disable all GNU extensions.
+  -E, -r, --regexp-extended
+                 use extended regular expressions in the script
+                 (for portability use POSIX -E).
+  -s, --separate
+                 consider files as separate rather than as a single,
+                 continuous long stream.
+      --sandbox
+                 operate in sandbox mode (disable e/r/w commands).
+  -u, --unbuffered
+                 load minimal amounts of data from the input files and flush
+                 the output buffers more often
+  -z, --null-data
+                 separate lines by NUL characters
+      --help     display this help and exit
+      --version  output version information and exit
+
+If no -e, --expression, -f, or --file option is given, then the first
+non-option argument is taken as the sed script to interpret.  All
+remaining arguments are names of input files; if no input files are
+specified, then the standard input is read.
+
+GNU sed home page: <https://www.gnu.org/software/sed/>.
+General help using GNU software: <https://www.gnu.org/gethelp/>.
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ sed -i -e 's/et/ET/g' /lorem-copy/at.txt
+sed: can't read /lorem-copy/at.txt: No such file or directory
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$  sed -i -e 's/et/ET/g' lorem-copy/at.txt
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ cat lorem-copy/at.txt
+At vero eos ET accusamus ET iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+deleniti atque corrupti quos dolores ET quas molestias excepturi sint occaecati cupiditate non
+provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum ET dolorum fuga.
+Et harum quidem rerum facilis est ET expedita distinctio.
+Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
+maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+Temporibus autem quibusdam ET aut officiis debitis aut rerum necessitatibus saepe eveniET
+ut ET voluptates repudiandae sint ET molestiae non recusandae.
+Itaque earum rerum hic tenETur a sapiente delectus, ut aut reiciendis voluptatibus maiores
+alias consequatur aut perferendis doloribus asperiores repellat
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git config user.name
+renevans
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git config -1
+error: unknown switch `1'
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ cd /c/project/
+bash: cd: /c/project/: No such file or directory
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ pwd
+/c/Users/renev/lab-bash
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git ls-files '*.txt'
+lorem-copy/at.txt
+lorem-copy/dummy_file.txt
+lorem-copy/lorem.txt
+lorem-copy/sed.txt
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git ls-files 'lorem/*.txt'
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git ls-files 'lorem-copy/*.txt'
+lorem-copy/at.txt
+lorem-copy/dummy_file.txt
+lorem-copy/lorem.txt
+lorem-copy/sed.txt
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git ls-files 'lorem.*'
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ wc -1 sed.txt
+wc: unknown option -- 1
+Try 'wc --help' for more information.
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ wc --help
+Usage: wc [OPTION]... [FILE]...
+  or:  wc [OPTION]... --files0-from=F
+Print newline, word, and byte counts for each FILE, and a total line if
+more than one FILE is specified.  A word is a non-zero-length sequence of
+characters delimited by white space.
+
+With no FILE, or when FILE is -, read standard input.
+
+The options below may be used to select which counts are printed, always in
+the following order: newline, word, character, byte, maximum line length.
+  -c, --bytes            print the byte counts
+  -m, --chars            print the character counts
+  -l, --lines            print the newline counts
+      --files0-from=F    read input from the files specified by
+                           NUL-terminated names in file F;
+                           If F is - then read names from standard input
+  -L, --max-line-length  print the maximum display width
+  -w, --words            print the word counts
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/wc>
+or available locally via: info '(coreutils) wc invocation'
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ wc -l sed.txt
+wc: sed.txt: No such file or directory
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ cd lorem-copy
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem-copy (master)
+$ wc -l sed.txt
+10 sed.txt
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem-copy (master)
+$ ls -dq *lorem* | wc -l
+1
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem-copy (master)
+$ cd ..
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ ls -dq *lorem* | wc -l
+2
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ cd
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~
+$ ls -dq *lorem* | wc -l
+ls: cannot access '*lorem*': No such file or directory
+0
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~
+$ cd lab-bash
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ ls -dq *lorem* | wc -l
+2
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ ls | grep "lorem" | wc -l
+2
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ cd lorem
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem (master)
+$ ls -dq *lorem* | wc -l
+ls: cannot access '*lorem*': No such file or directory
+0
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem (master)
+$ cd lorem-copy
+bash: cd: lorem-copy: No such file or directory
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash/lorem (master)
+$ cd ..
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git ls-files | grep lorem \ wc -1
+grep:  wc: No such file or directory
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git ls-files | grep lorem | wc -1
+wc: unknown option -- 1
+Try 'wc --help' for more information.
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git ls-files | grep lorem | wc -1
+wc: unknown option -- 1
+Try 'wc --help' for more information.
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git ls-files | grep lorem | we -l
+bash: we: command not found
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git ls-files | grep "lorem" | we -l
+bash: we: command not found
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git ls-files "./lorem.*" | wc -l
+0
+
+renev@LAPTOP-O3PIBG6R MINGW64 ~/lab-bash (master)
+$ git ls-files "lorem" | wc -l
+1
+
